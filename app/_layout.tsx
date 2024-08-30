@@ -118,6 +118,13 @@ function RootLayoutNav() {
           ),
         }}
       />
+      <Stack.Screen
+        name="(auth)/sign-up"
+        options={{
+          headerShown: false,
+          animation: "fade",
+        }}
+      />
     </Stack>
   );
 }
