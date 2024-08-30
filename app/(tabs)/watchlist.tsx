@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Explore = () => {
+const WatchList = () => {
   return (
     <View>
-      <Text>Explore</Text>
+      <Text>WatchList</Text>
     </View>
   );
 };
 
-export default Explore;
+export default WatchList;

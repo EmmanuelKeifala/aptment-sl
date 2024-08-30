@@ -1,10 +1,14 @@
-import { View, Text } from "react-native";
+import { View, StatusBar } from "react-native";
 import React from "react";
+import { Link } from "expo-router";
 
 const Page = () => {
   return (
     <View>
-      <Text>Page</Text>
+      <StatusBar barStyle={"dark-content"} />
+      <Link href={"/(modals)/login"}>Login</Link>
+      <Link href={"/(modals)/search"}>Search</Link>
+      <Link href={"/listings/12313"}>Listing</Link>
     </View>
   );
 };

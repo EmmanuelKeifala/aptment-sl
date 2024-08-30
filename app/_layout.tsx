@@ -1,7 +1,9 @@
+import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { StatusBar, TouchableOpacity } from "react-native";
 import "react-native-reanimated";
 
 export {
@@ -46,7 +48,41 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <Stack>
+      <StatusBar barStyle={"dark-content"} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="(modals)/login"
+        options={{
+          presentation: "modal",
+          headerShown: false,
+          title: "Log in or Sign Up",
+          headerTitleStyle: {
+            fontFamily: "jakata-sb",
+          },
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => {}}>
+              <Ionicons name="close-outline" size={28} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="listings/[id]"
+        options={{ headerTitle: "", headerShown: false }}
+      />
+      <Stack.Screen
+        name="(modals)/search"
+        options={{
+          headerShown: false,
+          animation: "fade",
+          presentation: "transparentModal",
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => {}}>
+              <Ionicons name="close-outline" size={28} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </Stack>
   );
 }
