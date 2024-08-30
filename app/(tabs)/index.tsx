@@ -1,14 +1,22 @@
 import { View, StatusBar } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, Stack } from "expo-router";
+import ExploreHeader from "@/components/ExploreHeader";
+import Listings from "@/components/Listings";
 
 const Page = () => {
+  const onDataChanged = (category: string) => {
+    console.log("CHANGED_", category);
+  };
   return (
-    <View>
-      <StatusBar barStyle={"dark-content"} />
-      <Link href={"/(modals)/login"}>Login</Link>
-      <Link href={"/(modals)/search"}>Search</Link>
-      <Link href={"/listings/12313"}>Listing</Link>
+    <View style={{ flex: 1 }}>
+      {/* <StatusBar barStyle={"dark-content"} /> */}
+      <Stack.Screen
+        options={{
+          header: () => <ExploreHeader onCategoryChanged={onDataChanged} />,
+        }}
+      />
+      <Listings />
     </View>
   );
 };
