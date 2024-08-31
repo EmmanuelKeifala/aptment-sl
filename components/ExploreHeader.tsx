@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   },
   searchText: {
     fontSize: 16,
-    fontFamily: "mon-sb",
+    fontFamily: "jakata-sb",
     color: Colors.primary,
     marginLeft: 8,
   },
@@ -152,12 +152,12 @@ const styles = StyleSheet.create({
   },
   categoryText: {
     fontSize: 14,
-    fontFamily: "mon-sb",
+    fontFamily: "",
     color: Colors.grey,
   },
   categoryTextActive: {
     fontSize: 14,
-    fontFamily: "mon-sb",
+    fontFamily: "jakata-sb",
     color: Colors.primary,
   },
 });
