@@ -32,6 +32,12 @@
         {
           "origin": "https://aptment-sl.com"
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(aptment-sl) to use your location."
+        }
       ]
     ],
     "experiments": {

@@ -11,24 +11,25 @@ import Animated, { FadeInRight, FadeOutLeft } from "react-native-reanimated";
 import { Ionicons } from "@expo/vector-icons";
 import { FlashList } from "@shopify/flash-list";
 import Colors from "@/constants/Colors";
+import { Listing } from "@/types/Listings";
 
 interface Props {
-  listings: any[];
+  listings: Listing[];
   category: string;
 }
 
 const Listings = ({ listings: items, category }: Props) => {
   const [data, setData] = useState(items);
-  const list = useRef<FlashList<any> | null>(null);
+  const list = useRef<FlashList<Listing> | null>(null);
 
   const removeItem = (itemId: number) => {
-    setData((prevData) => prevData.filter((item) => item.id !== itemId));
+    setData((prevData) => prevData.filter((item) => +item.id !== +itemId));
     list.current?.prepareForLayoutAnimationRender();
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
   };
 
-  const renderItem = ({ item }: { item: any }) => (
-    <TouchableOpacity onPress={() => removeItem(item.id)}>
+  const renderItem = ({ item }: { item: Listing }) => (
+    <TouchableOpacity onPress={() => removeItem(+item.id)}>
       <Link href={`/listings/${item.id}`} asChild>
         <TouchableOpacity>
           <Animated.View
